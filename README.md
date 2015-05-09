@@ -17,18 +17,68 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-intmin' );
+var intmin = require( 'compute-intmin' );
 ```
 
-#### foo( arr )
+#### intmin( [type] )
 
-What does this function do?
+Returns the minimum value of a specified `integer` type.
+
+``` javascript
+var min = intmin( 'int8' );
+// returns -128
+```
+
+The following `integer` types are supported:
+
+* 	__int8__: signed 8-bit integer
+*	__uint8__: unsigned 8-bit integer
+*	__int16__: signed 16-bit integer
+*	__uint16__: unsigned 16-bit integer
+*	__int32__: signed 32-bit integer
+*	__uint32__: unsigned 32-bit integer
+
+If not provided an integer `type`, the function returns the minimum signed 32-bit integer.
+
+``` javascript
+intmin() === intmin( 'int32' );
+// returns true
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-intmin' );
+var intmin = require( 'compute-intmin' ),
+	min;
+
+// int32 (default):
+min = intmin();
+// returns -2147483648
+
+// int8:
+min = intmin( 'int8' );
+// returns -128
+
+// int16:
+min = intmin( 'int16' );
+// returns -32768
+
+// int32:
+min = intmin( 'int32' );
+// returns -2147483648
+
+// uint8:
+min = intmin( 'uint8' );
+// returns 0
+
+// uint16:
+min = intmin( 'uint16' );
+// returns 0
+
+// uint32:
+min = intmin( 'uint32' );
+// returns 0
 ```
 
 To run the example code from the top-level application directory,
