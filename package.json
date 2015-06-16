@@ -1,6 +1,6 @@
 {
   "name": "compute-intmin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Returns the minimum value of a specified integer type.",
   "author": {
     "name": "Athan Reines",
